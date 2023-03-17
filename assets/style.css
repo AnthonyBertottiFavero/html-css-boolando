@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* :root { root è un sinonimo di html 
+    --bg-nav: #ff6900;
+    --color-h2: 
+} */
+
+html {
+    font-family: sans-serif;
+    font-size: 14px;
+    margin-top: 4rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header */
+.nav-header {
+    background-color: #ff6900;
+    height: 4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99; /* modificato con correzione */ 
+}
+
+.nav-header .container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    /* overflow: hidden; */ /* funziona verticalmente se do anche altezza qua (mi avrebbe nascosto immagine che sborda oltre altezza assegnata) */
+}
+
+.nav-header ul {
+    list-style: none;
+}
+
+.nav-header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-header .logo img {
+    height: 50%;
+}
+
+.nav-header .categories-menu,
+.nav-header .user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* nav li {
+	display: flex;
+	align-items: center;
+} */
+
+.nav-header a {
+    color: white;
+}
+
+
+/* main */
+main {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+main .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main .card {
+    flex: 0 0 calc(100% / 3);
+    /* background-color: red; */
+    /* border: 2px solid black; */
+    /* height: 200px; */
+    padding: 1.5rem 1rem;
+}
+
+.card .image-container {
+    position: relative;
+    width: 100%; /* modificato con correzione */
+    aspect-ratio: 1 / 1.6; /* modificato con correzione */ /* rapporto aureo (base 1 unità, altezza 1.6 unità) (esempio quadrato 1 / 1) */
+}
+
+.card img {
+    display: block; /* img è display inline e lascia spazio sotto quando vado a change immagini */
+    width: 100%;
+    height: 100%; /* modificato con correzione */
+    object-fit: cover;  /* modificato con correzione */ /* evita deformazione immagine */
+}
+
+.card .img-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .img-front:hover {
+    opacity: 0;
+    /* transition: all 2s; */
+}
+
+.card .img-back {
+    display: block; /* img display inline e lascia spazio sotto */
+}
+
+.card .image-container .heart {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    background-color: white;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    /* width: 2rem; */ 
+    /* height: 2rem; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.card .image-container .heart:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.card .image-container .tags {
+    position: absolute;
+    left: 0px;
+    bottom: 50px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.card .tags .tag-red {
+    background-color: red;
+    padding: 0.3rem 0.5rem;
+}
+
+.card .tags .tag-green {
+    background-color: green;
+    padding: 0.3rem 0.5rem;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.new-price {
+    color: red;
+    font-weight: 600;
+}
+
+.old-price {
+    text-decoration: line-through;
+}
+
+/* footer */
+footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    height: 7rem;
+    max-width: 100%;
+    background-color: #1A1A1A;
+}
+
+.info h2 {
+    color: white;
+    padding: 1.5rem 24rem 1.2rem 0rem;
+}
+
+.info a {
+    color: white;
+    text-decoration: none;
+    padding-right: 1rem;
+}
+
+.socials h2 {
+    color: white;
+    padding: 1.5rem 0rem 1rem 20rem;
+    font-size: 0.8rem;
+}
+
+#special-socials {
+    margin-left: 20rem;
+}
+
+.socials a {
+    margin: 0.2rem;
+    color: white;
+    font-size: 1rem;
+}
